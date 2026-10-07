@@ -40,12 +40,10 @@
       let target = null;
       // Pick the living enemy with the greatest current health.
       for (const enemy of enemies) {
-        // Skip dead enemies.
         if (enemy.health <= 0) {
           continue;
         }
-        // Replace the target when there is no current target
-        // or the current target is no healthier than this enemy.
+        // At all times target the greatest current health enemy
         // Keep the later enemy if two have equal health.
         if (!target || target.health <= enemy.health) {
           target = enemy;
